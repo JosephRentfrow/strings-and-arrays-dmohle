@@ -1,0 +1,55 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main()
+{
+    cout << "Welcome to the demo for strings and arrays!\n\n";
+    int myNumbers[12] = {11, 2, 333};
+
+    myNumbers[11] = 11111;
+
+    cout << "expected is 11...: " << myNumbers[0] << endl;
+    cout << "expected is a null value...: " << myNumbers[10] << endl;
+    cout << "expected to be out of bounds...: " << myNumbers[12] << endl;
+
+    for (int i = 0; i < 12; i++)
+        cout << "\n" << i << " " << myNumbers[i] << "\n\n";
+
+    int numberGrid[3][2];
+
+    numberGrid[0][0] = 11;
+    numberGrid[0][1] = 12;
+
+    numberGrid[1][0] = 21;
+    numberGrid[1][1] = 21;
+
+    numberGrid[2][0] = 31;
+    numberGrid[2][1] = 31;
+
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 2; j++) {
+            cout << numberGrid[i][j] << "  ";
+        }
+        cout << "\n\n";
+    }
+    cout << "\n\n";
+    int row0col0 = 71;
+
+    for (int i = 0; i < 3; i++){
+        for (int j = 0; j < 2; j++){
+            numberGrid[i][j] = row0col0++;
+        }
+        row0col0 -= 2;
+        row0col0 += 10;
+    }
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 2; j++) {
+            cout << numberGrid[i][j] << "  ";
+        }
+        cout << "\n\n";
+    }
+
+    return 0;
+}
